@@ -2,5 +2,5 @@
   "name": "prettier-config",
   "version": "1.0.0",
   "description": "Prettier shareable config",
-  "main": "index.json"
+  "main": ".prettierrc.js"
 }

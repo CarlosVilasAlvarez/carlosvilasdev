@@ -1,7 +1,6 @@
 {
   "files": [],
   "references": [
-    { "path": "packages/example" }
-    // { "path": "packages/another-example" },
+    // { "path": "packages/example" },
   ]
 }
