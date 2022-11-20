@@ -27,7 +27,6 @@ importers:
     specifiers:
       '@astrojs/tailwind': ^2.1.2
       '@astrojs/vercel': ^2.3.3
-      '@fontsource/inter': ^4.5.14
       astro: ^1.6.7
       dayjs: ^1.11.6
       prettier-config: workspace:*
@@ -36,7 +35,6 @@ importers:
     dependencies:
       '@astrojs/tailwind': 2.1.2_tailwindcss@3.2.4
       '@astrojs/vercel': 2.3.3
-      '@fontsource/inter': 4.5.14
       astro: 1.6.7
       dayjs: 1.11.6
       reading-time: 1.5.0
@@ -459,10 +457,6 @@ packages:
     transitivePeerDependencies:
       - supports-color
     dev: true
-
-  /@fontsource/inter/4.5.14:
-    resolution: {integrity: sha512-JDC9AocdPLuGsASkvWw9hS5gtHE7K9dOwL98XLrk5yjYqxy4uVnScG58NUvFMJDVJRl/7c8Wnap6PEs+7Zvj1Q==}
-    dev: false
 
   /@humanwhocodes/config-array/0.10.7:
     resolution: {integrity: sha512-MDl6D6sBsaV452/QSdX+4CXIjZhIcI0PELsxUjk4U828yd58vk3bTIvk/6w5FY+4hIy9sLW0sfrV7K7Kc++j/w==}
