@@ -19,7 +19,7 @@ const displayDate = dayjs(postData.pubDate).format('MMM D, YYYY').toUpperCase();
             <span>•</span>
             <span>{`${Math.ceil(readingTime)} MIN. READ`}</span>
         </div>
-        <h2 class="text-3xl font-semibold my-2">{postData.title}</h2>
-        <p>{postData.description}</p>
+        <h2 class="text-tm font-semibold my-2">{postData.title}</h2>
+        <p class="text-sm">{postData.description}</p>
     </article>
 </a>
