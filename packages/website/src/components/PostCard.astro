@@ -1,0 +1,25 @@
+---
+import type { Frontmatter } from '../types';
+import dayjs from 'dayjs';
+
+interface Props {
+    postData: Frontmatter;
+    postUrl: string;
+    readingTime: number;
+}
+
+const { postData, postUrl, readingTime } = Astro.props;
+const displayDate = dayjs(postData.pubDate).format('MMM D, YYYY').toUpperCase();
+---
+
+<a href={postUrl}>
+    <article class="text-gray-700">
+        <div class="text-xs font-bold tracking-wide">
+            <span>{displayDate}</span>
+            <span>•</span>
+            <span>{`${Math.ceil(readingTime)} MIN. READ`}</span>
+        </div>
+        <h2 class="text-3xl font-semibold my-2">{postData.title}</h2>
+        <p>{postData.description}</p>
+    </article>
+</a>
