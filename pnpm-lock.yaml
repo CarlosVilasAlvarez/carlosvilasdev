@@ -29,13 +29,17 @@ importers:
       '@astrojs/vercel': ^2.3.3
       '@fontsource/inter': ^4.5.14
       astro: ^1.6.7
+      dayjs: ^1.11.6
       prettier-config: workspace:*
+      reading-time: ^1.5.0
       tailwindcss: ^3.0.24
     dependencies:
       '@astrojs/tailwind': 2.1.2_tailwindcss@3.2.4
       '@astrojs/vercel': 2.3.3
       '@fontsource/inter': 4.5.14
       astro: 1.6.7
+      dayjs: 1.11.6
+      reading-time: 1.5.0
       tailwindcss: 3.2.4
     devDependencies:
       prettier-config: link:../prettier-config
@@ -1345,6 +1349,10 @@ packages:
   /data-uri-to-buffer/4.0.0:
     resolution: {integrity: sha512-Vr3mLBA8qWmcuschSLAOogKgQ/Jwxulv3RNE4FXnYWRGujzrRWQI4m12fQqRkwX06C0KanhLr4hK+GydchZsaA==}
     engines: {node: '>= 12'}
+    dev: false
+
+  /dayjs/1.11.6:
+    resolution: {integrity: sha512-zZbY5giJAinCG+7AGaw0wIhNZ6J8AhWuSXKvuc1KAyMiRsvGQWqh4L+MomvhdAYjN+lqvVCMq1I41e3YHvXkyQ==}
     dev: false
 
   /debug/4.3.4:
@@ -3737,6 +3745,10 @@ packages:
     engines: {node: '>=8.10.0'}
     dependencies:
       picomatch: 2.3.1
+    dev: false
+
+  /reading-time/1.5.0:
+    resolution: {integrity: sha512-onYyVhBNr4CmAxFsKS7bz+uTLRakypIe4R+5A824vBSkQy/hB3fZepoVEf8OVAxzLvK+H/jm9TzpI3ETSm64Kg==}
     dev: false
 
   /recast/0.20.5:
