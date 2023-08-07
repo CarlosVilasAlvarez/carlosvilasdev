@@ -5,10 +5,12 @@
   "author": "Carlos Vilas Álvarez <carlosvilas@carlosvilas.dev>",
   "license": "MIT",
   "scripts": {
-    "build": "tsc --build tsconfig.build.json",
+    "dev": "astro dev --host",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
     "format": "prettier \"packages/**/*.{ts,tsx,js,jsx,yml,json,graphql,astro}\" --plugin-search-dir=. --write",
     "format:check": "prettier \"packages/**/*.{ts,tsx,js,jsx,yml,json,graphql,astro}\" --plugin-search-dir=. --check",
-    "test:unit": "pnpm -r test:unit",
     "lint": "eslint --cache ."
   },
   "devDependencies": {
@@ -19,6 +21,14 @@
     "prettier": "^3.0.1",
     "prettier-plugin-astro": "^0.11.0",
     "typescript": "^5.1.6"
+  },
+  "dependencies": {
+    "@astrojs/tailwind": "^4.0.0",
+    "@astrojs/vercel": "^3.8.0",
+    "astro": "^2.10.2",
+    "dayjs": "^1.11.9",
+    "reading-time": "^1.5.0",
+    "tailwindcss": "^3.3.3"
   },
   "engines": {
     "node": ">=20",
