@@ -1,29 +1,37 @@
----
-import SocialMedia from './SocialMedia.astro';
----
-
 <section>
     <div class="flex flex-row items-center">
         <img
             src="/myself-avatar.webp"
             alt="Me"
-            class="rounded-full object-cover"
-            width="64"
-            height="64"
+            width="74"
+            height="74"
+            class="rounded-full object-cover m-0"
         />
         <div class="ml-5">
-            <h1 class="text-base font-bold">Carlos Vilas Álvarez</h1>
-            <p class="text-sm text-gray-800">Software Craftmanship</p>
-            <SocialMedia />
+            <h1 class="text-base m-0">Carlos Vilas Álvarez</h1>
+            <p class="text-sm m-0">Software Developer</p>
+            <div class="text-xs mt-1 text-gray-500">
+                <a href="https://github.com/CarlosVilasAlvarez" target="_blank"
+                    >Github</a
+                >
+                <a
+                    href="https://www.linkedin.com/in/carlos-vilas-alvarez/"
+                    target="_blank"
+                    class="ml-1">LinkedIn</a
+                >
+            </div>
         </div>
     </div>
-    <p class="text-sm leading-relaxed text-gray-700 mt-5">
-        I like to share my knowledge and thoughts as I try to improve my skills.
-        Currently working at <a
-            href="https://www.linkedin.com/company/holaunibo">Unibo Neobank</a
-        > as a Senior Developer.
+    <p class="mt-5">
+        Hola! Soy Carlos, vivo en Vigo<span class="text-xs align-top"
+            >(Viva!)</span
+        > y actualmente trabajo como Software Developer en el magnífico equipo
+        de <a href="https://www.linkedin.com/company/seatcode">SEAT:CODE</a>,
+        también tengo experiencia previa trabajando en diferentes startups.
     </p>
-    <p class="text-sm leading-relaxed text-slate-700 mt-2">
-        Interested in software, finance, politics, and F1.
+    <p class="mt-2">
+        A parte del código, también me gusta compartir mis ideas y reflexiones
+        sobre la vida.
     </p>
+    <p class="mt-2"></p>
 </section>

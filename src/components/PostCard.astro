@@ -12,14 +12,14 @@ const { postData, postUrl, readingTime } = Astro.props;
 const displayDate = dayjs(postData.pubDate).format('MMM D, YYYY').toUpperCase();
 ---
 
-<a href={postUrl}>
+<a href={postUrl} class="no-underline">
     <article class="text-gray-700">
         <div class="text-xs font-bold tracking-wide">
             <span>{displayDate}</span>
             <span>•</span>
             <span>{`${Math.ceil(readingTime)} MIN. READ`}</span>
         </div>
-        <h2 class="text-tm font-semibold my-2">{postData.title}</h2>
+        <h2 class="text-tm font-semibold mt-2 mb-2">{postData.title}</h2>
         <p class="text-sm">{postData.description}</p>
     </article>
 </a>

@@ -1,5 +1,14 @@
 ---
-const { frontmatter } = Astro.props;
+import dayjs from 'dayjs';
+import LogoDivider from '../components/LogoDivider.astro';
+import PostHeader from '../components/PostHeader.astro';
+import readingTime from 'reading-time';
+
+const { frontmatter, rawContent } = Astro.props;
+
+const displayDate = dayjs(frontmatter.pubDate)
+    .format('MMM D, YYYY')
+    .toUpperCase();
 ---
 
 <html>
@@ -38,8 +47,13 @@ const { frontmatter } = Astro.props;
         <title>Carlos Vilas</title>
     </head>
     <body>
-        <article class="prose lg:prose-lg">
+        <article class="prose lg:prose-lg p-6 pt-2 mx-auto">
+            <PostHeader
+                displayDate={displayDate}
+                readingTime={readingTime(rawContent()).minutes}
+            />
             <slot />
+            <LogoDivider />
         </article>
     </body>
 </html>

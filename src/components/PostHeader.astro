@@ -1,0 +1,22 @@
+---
+interface Props {
+    displayDate: string;
+    readingTime: number;
+}
+
+const { displayDate, readingTime } = Astro.props;
+---
+
+<div class="pb-5 pt-5">
+    <div class="flex items-center justify-between content-center">
+        <a href="/" class="text-sm font-bold tracking-wide no-underline"
+            >◀ BACK</a
+        >
+        <div class="text-xs font-bold tracking-wide">
+            <span>{displayDate}</span>
+            <span>•</span>
+            <span>{`${Math.ceil(readingTime)} MIN. READ`}</span>
+        </div>
+    </div>
+    <div class="grow border-t-2 border-black w-full h-0 mt-3"></div>
+</div>
