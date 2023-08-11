@@ -6,20 +6,25 @@ interface Props {
     postData: Frontmatter;
     postUrl: string;
     readingTime: number;
+    styles?: string;
 }
 
-const { postData, postUrl, readingTime } = Astro.props;
+const { postData, postUrl, readingTime, styles } = Astro.props;
 const displayDate = dayjs(postData.pubDate).format('MMM D, YYYY').toUpperCase();
 ---
 
-<a href={postUrl} class="no-underline">
-    <article class="text-gray-700">
-        <div class="text-xs font-bold tracking-wide">
-            <span>{displayDate}</span>
-            <span>•</span>
-            <span>{`${Math.ceil(readingTime)} MIN. READ`}</span>
-        </div>
-        <h2 class="text-tm font-semibold mt-2 mb-2">{postData.title}</h2>
-        <p class="text-sm">{postData.description}</p>
-    </article>
-</a>
+<div class={styles}>
+    <a href={postUrl} class="no-underline">
+        <article class="text-gray-700">
+            <div class="text-xs font-bold tracking-wide lg:text-sm">
+                <span>{displayDate}</span>
+                <span>•</span>
+                <span>{`${Math.ceil(readingTime)} MIN. READ`}</span>
+            </div>
+            <h2 class="text-2xl font-semibold my-2 lg:text-3xl">
+                {postData.title}
+            </h2>
+            <p class="text-sm lg:text-base m-0">{postData.description}</p>
+        </article>
+    </a>
+</div>

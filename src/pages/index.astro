@@ -1,6 +1,6 @@
 ---
-import About from '../components/About.astro';
-import LatestPosts from '../components/LatestPosts.astro';
+import About from '../sections/About.astro';
+import LatestPosts from '../sections/LatestPosts.astro';
 import LogoDivider from '../components/LogoDivider.astro';
 ---
 
@@ -40,9 +40,9 @@ import LogoDivider from '../components/LogoDivider.astro';
         <meta name="generator" content={Astro.generator} />
         <title>Carlos Vilas</title>
     </head>
-    <body class="font-sans prose pt-8 px-6 mx-auto">
+    <body class="font-sans prose pt-8 px-6 mx-auto lg:max-w-3xl">
         <About />
-        <LogoDivider />
+        <LogoDivider styles="py-7 lg:py-9" />
         <LatestPosts />
     </body>
 </html>

@@ -5,11 +5,7 @@ module.exports = {
         fontFamily: {
             sans: ['Inter', 'sans-serif'],
         },
-        extend: {
-            fontSize: {
-                tm: '1.688rem',
-            },
-        },
+        extend: {},
     },
     plugins: [require('@tailwindcss/typography')],
 };
