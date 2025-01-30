@@ -1,17 +1,22 @@
 ---
+import "../styles/global.css";
 import profilePic from "../assets/profile_pic.jpeg";
 import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
 ---
 
 <Layout>
+  <header>
+    <Navbar />
+  </header>
   <main>
     <section id="hero">
       <img
         src={profilePic.src}
-        width="115"
-        height="48"
+        width="447"
+        height="447"
         alt="Photo of Carlos Vilas Alvarez"
-        class="rounded-full w-56 h-56"
+        class="rounded-full w-48 h-48 mx-auto shadow-lg"
       />
     </section>
   </main>
