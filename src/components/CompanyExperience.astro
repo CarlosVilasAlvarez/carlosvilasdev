@@ -1,0 +1,35 @@
+---
+interface Props {
+  jobTitle: string;
+  companyName: string;
+  startDate: string;
+  endDate: string;
+  description: string;
+  companyLogoURL: string;
+}
+
+const {
+  jobTitle,
+  companyName,
+  startDate,
+  endDate,
+  description,
+  companyLogoURL,
+} = Astro.props;
+---
+
+<div class="relative ml-1 pl-4 border-l-2 border-neutral-200">
+  <div class="flex">
+    <img
+      class="w-6 h-6 p-1 rounded-full ring-1 ring-gray-300 dark:ring-gray-500"
+      src={companyLogoURL}
+      alt="Default avatar"
+    />
+    <h3 class="font-bold ml-2">{companyName}</h3>
+  </div>
+
+  <p class="text-neutral-600 text-sm mt-2">
+    {jobTitle} • {startDate} - {endDate}
+  </p>
+  <p class="mt-2 text-neutral-700">{description}</p>
+</div>

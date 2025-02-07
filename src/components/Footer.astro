@@ -4,17 +4,36 @@ import LinkedInLogo from "../assets/icons/linkedin.svg";
 import XLogo from "../assets/icons/x.svg";
 ---
 
-<footer id="footer" class="bg-neutral-100 px-4 py-8">
+<footer id="footer" class="bg-neutral-100 px-4 pt-8 pb-4">
   <div class="text-center">
-    <div class="flex justify-center">
-      <GithubLogo class="w-8" />
-      <LinkedInLogo class="w-8" />
-      <XLogo class="w-8" />
+    <div class="flex justify-center space-x-6">
+      <a
+        href="https://github.com/CarlosVilasAlvarez"
+        target="_blank"
+        rel="noopener noreferrer"
+        ><GithubLogo class="w-6 text-neutral-600" />
+      </a>
+      <a
+        href="https://www.linkedin.com/in/carlos-vilas-alvarez/"
+        target="_blank"
+        rel="noopener noreferrer"
+        ><LinkedInLogo class="w-6 text-neutral-600" />
+      </a>
+      <a
+        href="https://x.com/CarlosVilasDev"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <XLogo class="w-6 text-neutral-600" />
+      </a>
     </div>
-
-    <div class="flex flex-col justify-center space-x-6 mb-4">
-      <p class="text-neutral-600">Get in touch: carlos@example.com</p>
-      <p class="text-sm text-neutral-500 mt-2">© 2025 Carlos Vilas Álvarez</p>
+    <div class="flex flex-col justify-center space-x-6">
+      <p class="text-neutral-600 text-sm mt-4">
+        Get in touch: carlosvilasalvarez@gmail.com
+      </p>
+      <p class="text-sm text-neutral-500 mt-2">
+        © {new Date().getFullYear()} Carlos Vilas Álvarez
+      </p>
     </div>
   </div>
 </footer>

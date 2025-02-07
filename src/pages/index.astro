@@ -1,23 +1,87 @@
 ---
 import "../styles/global.css";
-import profilePic from "../assets/profile_pic.jpeg";
+import profilePic from "../assets/profile_pic.webp";
 import Layout from "../layouts/Layout.astro";
-import Navbar from "../components/Navbar.astro";
+import CompanyExperience from "../components/CompanyExperience.astro";
+import LocationIcon from "../assets/icons/location.svg";
+import CompanyIcon from "../assets/icons/company.svg";
 ---
 
 <Layout>
-  <header>
-    <Navbar />
-  </header>
-  <main>
-    <section id="hero">
-      <img
-        src={profilePic.src}
-        width="447"
-        height="447"
-        alt="Photo of Carlos Vilas Alvarez"
-        class="rounded-full w-48 h-48 mx-auto shadow-lg"
+  <section id="hero" class="text-center py-8">
+    <img
+      src={profilePic.src}
+      width="447"
+      height="447"
+      alt="Photo of Carlos Vilas Alvarez"
+      class="rounded-full w-48 h-48 mx-auto shadow-lg mt-2"
+    />
+    <h1 class="text-2xl font-bold mt-6 mb-2">Carlos Vilas Álvarez</h1>
+    <p class="text-neutral-600 mb-3">Software Developer</p>
+    <div class="flex justify-center">
+      <CompanyIcon class="w-5 mr-1 text-neutral-600" />
+      <p class="text-neutral-600 mr-4 text-sm">Qualifyze</p>
+      <LocationIcon class="w-5 mr-1 text-neutral-600" />
+      <p class="text-neutral-600 text-sm">Vigo, Spain</p>
+    </div>
+  </section>
+  <section id="manifesto" class="px-4 py-8 bg-neutral-50">
+    <h2 class="text-xl font-bold mb-6">My Philosophy</h2>
+    <div class="space-y-4">
+      <p class="text-neutral-700">
+        I believe in creating meaningful software that makes a difference in
+        people's lives. My approach combines technical excellence with
+        user-centered design.
+      </p>
+      <p class="text-neutral-700">
+        Innovation and continuous learning drive my professional journey, always
+        staying current with emerging technologies and best practices.
+      </p>
+    </div>
+  </section>
+  <section id="timeline" class="px-4 py-8">
+    <h2 class="text-xl font-bold mb-6">Professional Experience</h2>
+    <div class="space-y-8">
+      <CompanyExperience
+        jobTitle="Backend Engineer (Mid)"
+        companyName="Qualifyze"
+        companyLogoURL="https://media.licdn.com/dms/image/v2/C4D0BAQGqyYkaHZRx0g/company-logo_200_200/company-logo_200_200/0/1660896511174/qualifyze_logo?e=1746662400&v=beta&t=q5ZQCA1ngS3CwDWDU2YcQLlo8qrMWXFiv6fnOGwHy4o"
+        startDate="January 2025"
+        endDate="Present"
+        description="Leading development of core platform features"
       />
-    </section>
-  </main>
+      <CompanyExperience
+        jobTitle="Engineer II"
+        companyName="SEAT:CODE"
+        companyLogoURL="https://media.licdn.com/dms/image/v2/D4D0BAQFEurf1aYROog/company-logo_200_200/company-logo_200_200/0/1701727106034/seatcode_logo?e=1746662400&v=beta&t=4C46VKUqsL6kcPueWMDXvh1Kewa2KaZxQLKNZCkGTAQ"
+        startDate="June 2023"
+        endDate="January 2025"
+        description="Leading development of core platform features"
+      />
+      <CompanyExperience
+        jobTitle="Software Developer (Mid)"
+        companyName="Unibo Neobank"
+        companyLogoURL="https://media.licdn.com/dms/image/v2/C4D0BAQGd04v44TkP4w/company-logo_200_200/company-logo_200_200/0/1678372601967/holaunibo_logo?e=1746662400&v=beta&t=czKt3dHWZ5f_WNNf2-K_uwyJRX98rWGKj5OnlxhZfiY"
+        startDate="November 2022"
+        endDate="June 2023"
+        description="Developed responsive web applications"
+      />
+      <CompanyExperience
+        jobTitle="Backend Engineer"
+        companyName="BizAway"
+        companyLogoURL="https://media.licdn.com/dms/image/v2/D4D0BAQEubesLpH024Q/company-logo_200_200/company-logo_200_200/0/1715701561956/bizaway_logo?e=1746662400&v=beta&t=BYQLj3OPZadcwrZXmx3yE4eM4utH0WyiyiCAi44a3tg"
+        startDate="March 2021"
+        endDate="November 2022"
+        description="Developed responsive web applications"
+      />
+      <CompanyExperience
+        jobTitle="Junior Software Developer"
+        companyName="Galvintec"
+        companyLogoURL="https://media.licdn.com/dms/image/v2/C4E0BAQGoYg4el-OsUQ/company-logo_200_200/company-logo_200_200/0/1646400812986/galvintec_logo?e=1746662400&v=beta&t=jRUK-3b8-ERgvW9MiXDdjvT_YAoeUT387-8ksZ-K4XQ"
+        startDate="April 2020"
+        endDate="March 2021"
+        description="Developed responsive web applications"
+      />
+    </div>
+  </section>
 </Layout>
