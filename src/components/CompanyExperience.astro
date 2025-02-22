@@ -1,4 +1,6 @@
 ---
+import Badge from "./Badge.astro";
+
 interface Props {
   jobTitle: string;
   companyName: string;
@@ -25,11 +27,11 @@ const {
       src={companyLogoURL}
       alt="Default avatar"
     />
-    <h3 class="font-bold ml-2">{companyName}</h3>
+    <h3 class="font-bold ml-2 text-base md:text-lg">{companyName}</h3>
   </div>
-
-  <p class="text-neutral-600 text-sm mt-2">
+  <p class="text-neutral-600 text-sm md:text-base mt-2">
     {jobTitle} • {startDate} - {endDate}
   </p>
-  <p class="mt-2 text-neutral-700">{description}</p>
+  <p class="mt-2 text-neutral-700 text-sm md:text-base">{description}</p>
+  <Badge text="Typescript" class="mt-2" />
 </div>
