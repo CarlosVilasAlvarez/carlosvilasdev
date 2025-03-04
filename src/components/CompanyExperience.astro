@@ -8,6 +8,7 @@ interface Props {
   endDate: string;
   description: string;
   companyLogoURL: string;
+  technologies: string[];
 }
 
 const {
@@ -17,10 +18,11 @@ const {
   endDate,
   description,
   companyLogoURL,
+  technologies,
 } = Astro.props;
 ---
 
-<div class="relative ml-1 pl-4 border-l-2 border-neutral-200">
+<div class="relative pl-4 border-l-2 border-neutral-200">
   <div class="flex">
     <img
       class="w-6 h-6 p-1 rounded-full ring-1 ring-gray-300 dark:ring-gray-500"
@@ -33,5 +35,8 @@ const {
     {jobTitle} • {startDate} - {endDate}
   </p>
   <p class="mt-2 text-neutral-700 text-sm md:text-base">{description}</p>
-  <Badge text="Typescript" class="mt-2" />
+  {
+    technologies &&
+      technologies.map((tech) => <Badge text={tech} class="mt-4" />)
+  }
 </div>
