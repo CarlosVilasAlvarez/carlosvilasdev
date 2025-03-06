@@ -5,6 +5,7 @@ import CompanyExperience from "../components/CompanyExperience.astro";
 import LocationIcon from "../assets/icons/location.svg";
 import CompanyIcon from "../assets/icons/company.svg";
 import Base from "../layouts/Base.astro";
+import { m } from "../paraglide/messages.js";
 ---
 
 <Base>
@@ -30,14 +31,16 @@ import Base from "../layouts/Base.astro";
           Qualifyze
         </p>
         <LocationIcon class="w-4 md:w-6 mr-1 text-neutral-600" />
-        <p class="text-neutral-600 text-sm md:text-base">Vigo, Spain</p>
+        <p class="text-neutral-600 text-sm md:text-base">
+          {m["profile.location"]}
+        </p>
       </div>
     </div>
   </section>
   <div class="border border-b-1 border-neutral-200 md:max-w-4xl mx-auto"></div>
   <section id="timeline" class="px-4 py-8">
     <div class="md:mx-auto md:max-w-4xl">
-      <h2 class="text-xl font-bold mb-6">Professional Experience</h2>
+      <h2 class="text-xl font-bold mb-6">{m["experience.title"]}</h2>
       <div
         class="space-y-8 relative border-s border-gray-200 dark:border-gray-700 ml-3"
       >

@@ -4,11 +4,12 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev --host",
-    "build": "astro build",
+    "build": "paraglide-js compile --project ./project.inlang --outdir ./src/paraglide && astro build",
     "preview": "astro preview --host",
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/node": "^9.1.2",
     "@astrojs/sitemap": "^3.2.1",
     "@tailwindcss/vite": "^4.0.9",
     "astro": "^5.4.2",
@@ -16,5 +17,8 @@
   },
   "volta": {
     "node": "22.14.0"
+  },
+  "devDependencies": {
+    "@inlang/paraglide-js": "2.0.0-beta.26"
   }
 }
