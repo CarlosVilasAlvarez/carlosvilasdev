@@ -21,6 +21,7 @@ ENV NODE_ENV=production
 
 # Copy the production build from the builder stage
 COPY --from=builder /app/dist ./dist
+COPY --from=builder /app/node_modules ./node_modules
 
 # Expose the default port (adjust if necessary)
 EXPOSE 3000
