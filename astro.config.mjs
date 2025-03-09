@@ -12,6 +12,7 @@ export default defineConfig({
     experimental: {
         svg: true,
     },
+    server: { port: 3000 },
     vite: {
         plugins: [
             tailwindcss(),
