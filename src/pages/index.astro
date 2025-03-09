@@ -15,10 +15,11 @@ import { m } from "../paraglide/messages.js";
   >
     <img
       src={profilePic.src}
-      width="447"
-      height="447"
+      width="128"
+      height="128"
       alt="Photo of Carlos Vilas Alvarez"
       class="rounded-md md:w-32 md:h-32 w-28 h-28 shadow-lg"
+      loading="eager"
     />
     <div class="md:text-left ml-4 md:ml-12">
       <h1 class="text-xl md:text-2xl font-bold">Carlos Vilas Álvarez</h1>
@@ -45,12 +46,10 @@ import { m } from "../paraglide/messages.js";
         class="space-y-8 relative border-s border-gray-200 dark:border-gray-700 ml-3"
       >
         <CompanyExperience
-          jobTitle="Backend Engineer (Mid)"
           companyName="Qualifyze"
           companyLogoURL="https://media.licdn.com/dms/image/v2/C4D0BAQGqyYkaHZRx0g/company-logo_200_200/company-logo_200_200/0/1660896511174/qualifyze_logo?e=1746662400&v=beta&t=q5ZQCA1ngS3CwDWDU2YcQLlo8qrMWXFiv6fnOGwHy4o"
-          startDate="January 2025"
-          endDate="Present"
-          description="I'm part of a big product oriented team in a fast-growing company related to the pharmaceutical sector, home to the largest database of quality compliance data in the world."
+          timeline={m["experience.qualifyze.timeline"]()}
+          description={m["experience.qualifyze.description"]()}
           technologies={[
             "Node",
             "TypeScript",
@@ -63,12 +62,10 @@ import { m } from "../paraglide/messages.js";
           ]}
         />
         <CompanyExperience
-          jobTitle="Full-Stack Engineer II (Mid)"
           companyName="SEAT:CODE"
           companyLogoURL="https://media.licdn.com/dms/image/v2/D4D0BAQFEurf1aYROog/company-logo_200_200/company-logo_200_200/0/1701727106034/seatcode_logo?e=1746662400&v=beta&t=4C46VKUqsL6kcPueWMDXvh1Kewa2KaZxQLKNZCkGTAQ"
-          startDate="June 2023"
-          endDate="January 2025"
-          description="At SEAT:CODE, I was working in a small team for a gamification solution for Audi aimed at reducing battery waste and improving user satisfaction with their vehicle."
+          timeline={m["experience.seatCode.timeline"]()}
+          description={m["experience.seatCode.description"]()}
           technologies={[
             "Node",
             "TypeScript",
@@ -80,12 +77,10 @@ import { m } from "../paraglide/messages.js";
           ]}
         />
         <CompanyExperience
-          jobTitle="Backend Engineer (Mid)"
           companyName="Unibo Neobank"
           companyLogoURL="https://media.licdn.com/dms/image/v2/C4D0BAQGd04v44TkP4w/company-logo_200_200/company-logo_200_200/0/1678372601967/holaunibo_logo?e=1746662400&v=beta&t=czKt3dHWZ5f_WNNf2-K_uwyJRX98rWGKj5OnlxhZfiY"
-          startDate="November 2022"
-          endDate="June 2023"
-          description="Collaborated in a really small, dynamic fintech product team. My primary focus was on designing and implementing robust, scalable microservices and solutions that catered to the needs of the company. I actively participated in the creation of a rich domain model and contributed to product development efforts."
+          timeline={m["experience.uniboNeobank.timeline"]()}
+          description={m["experience.uniboNeobank.description"]()}
           technologies={[
             "Node",
             "TypeScript",
@@ -96,12 +91,10 @@ import { m } from "../paraglide/messages.js";
           ]}
         />
         <CompanyExperience
-          jobTitle="Backend Engineer"
           companyName="BizAway"
           companyLogoURL="https://media.licdn.com/dms/image/v2/D4D0BAQEubesLpH024Q/company-logo_200_200/company-logo_200_200/0/1715701561956/bizaway_logo?e=1746662400&v=beta&t=BYQLj3OPZadcwrZXmx3yE4eM4utH0WyiyiCAi44a3tg"
-          startDate="March 2021"
-          endDate="November 2022"
-          description="Worked at an international B2B startup from Italy that streamlined business travel bookings. I developed and maintained core product services, libraries and frameworks and worked in a small product oriented team."
+          timeline={m["experience.bizAway.timeline"]()}
+          description={m["experience.bizAway.description"]()}
           technologies={[
             "Node",
             "TypeScript",
@@ -112,12 +105,10 @@ import { m } from "../paraglide/messages.js";
           ]}
         />
         <CompanyExperience
-          jobTitle="Junior Software Developer"
           companyName="Galvintec"
           companyLogoURL="https://media.licdn.com/dms/image/v2/C4E0BAQGoYg4el-OsUQ/company-logo_200_200/company-logo_200_200/0/1646400812986/galvintec_logo?e=1746662400&v=beta&t=jRUK-3b8-ERgvW9MiXDdjvT_YAoeUT387-8ksZ-K4XQ"
-          startDate="April 2020"
-          endDate="March 2021"
-          description="Working as a full-stack developer in an e-commerce platform that we were building from scratch. My main responsibility was to develop the product's catalog microservice."
+          timeline={m["experience.galvintec.timeline"]()}
+          description={m["experience.galvintec.description"]()}
           technologies={["Node", "TypeScript", "MongoDB", "Docker", "GraphQL"]}
         />
       </div>

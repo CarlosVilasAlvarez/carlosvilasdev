@@ -2,24 +2,15 @@
 import Badge from "./Badge.astro";
 
 interface Props {
-  jobTitle: string;
+  timeline: string;
   companyName: string;
-  startDate: string;
-  endDate: string;
   description: string;
   companyLogoURL: string;
   technologies: string[];
 }
 
-const {
-  jobTitle,
-  companyName,
-  startDate,
-  endDate,
-  description,
-  companyLogoURL,
-  technologies,
-} = Astro.props;
+const { timeline, companyName, description, companyLogoURL, technologies } =
+  Astro.props;
 ---
 
 <div class="-start-4 relative">
@@ -27,7 +18,10 @@ const {
     <img
       class="w-8 h-8 border-gray-200 border-3 rounded-full"
       src={companyLogoURL}
-      alt="Default avatar"
+      alt={`Logo of ${companyName}`}
+      width="32"
+      height="32"
+      loading="lazy"
     />
     <h3 class="font-bold ml-2 text-base md:text-lg">
       {companyName}
@@ -35,7 +29,7 @@ const {
   </div>
   <div class="ml-10">
     <p class="text-neutral-600 text-sm md:text-base">
-      {jobTitle} • {startDate} - {endDate}
+      {timeline}
     </p>
     <p class="mt-3 md:mt-4 text-neutral-700 text-sm md:text-base">
       {description}

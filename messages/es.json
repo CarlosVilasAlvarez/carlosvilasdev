@@ -4,6 +4,26 @@
     "location": "Vigo"
   },
   "experience": {
-    "title": "Experiencia profesional"
+    "title": "Experiencia profesional",
+    "qualifyze": {
+      "timeline": "Backend Engineer (Mid) • Enero 2025 - Actualidad",
+      "description": "Soy parte de un gran equipo de producto en una empresa en rápido crecimiento del sector farmacéutico, la cual alberga la mayor base de datos de quality compliance data del mundo."
+    },
+    "seatCode": {
+      "timeline": "Full-Stack Engineer II (Mid) • Junio 2023 - Enero 2025",
+      "description": "En SEAT:CODE, trabajé en un equipo pequeño desarrollando una solución de gamificación para Audi, enfocada en reducir el desperdicio de baterías y mejorar la satisfacción de los usuarios con sus vehículos."
+    },
+    "uniboNeobank": {
+      "timeline": "Backend Engineer (Mid) • Noviembre 2022 - Junio 2023",
+      "description": "Colaboré en un equipo de producto pequeño y dinámico. Mi enfoque principal fue diseñar e implementar microservicios y soluciones robustas y escalables que respondieran a las necesidades de la empresa. Participé activamente en la creación del modelo de dominio y su aplicacion en codigo."
+    },
+    "bizAway": {
+      "timeline": "Backend Engineer • Marzo 2021 - Noviembre 2022",
+      "description": "Trabajé en una startup internacional B2B italiana que simplificaba las reservas de viajes de negocios. Desarrollé y mantuve servicios clave del producto, librerias y frameworks, formando parte de un pequeño equipo orientado a producto."
+    },
+    "galvintec": {
+      "timeline": "Junior Software Developer • Abril 2020 - Marzo 2021",
+      "description": "Trabajé como desarrollador full-stack en una plataforma de e-commerce que construimos desde cero."
+    }
   }
 }
