@@ -19,6 +19,6 @@
     "node": "22.14.0"
   },
   "devDependencies": {
-    "@inlang/paraglide-js": "2.0.0-beta.26"
+    "@inlang/paraglide-js": "2.0.8"
   }
 }
