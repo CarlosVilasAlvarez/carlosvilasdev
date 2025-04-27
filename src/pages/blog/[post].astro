@@ -1,0 +1,40 @@
+---
+import { getCollection, render } from "astro:content";
+import Prose from "../../components/Prose.astro";
+import Base from "../../layouts/Base.astro";
+import Button from "../../components/Button.astro";
+import { ArrowLeft, House } from "@lucide/astro";
+
+export const prerender = true;
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog");
+  return posts.map((post) => ({
+    params: { post: post.data.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+---
+
+<Base>
+  <main>
+    <div class="mb-6 flex justify-between">
+      <a href="/blog">
+        <Button
+          ><div class="flex gap-x-3">
+            <ArrowLeft /> Back to blog
+          </div>
+        </Button>
+      </a>
+      <a href="/">
+        <Button>
+          <House />
+        </Button>
+      </a>
+    </div>
+    <Prose><Content /></Prose>
+  </main></Base
+>

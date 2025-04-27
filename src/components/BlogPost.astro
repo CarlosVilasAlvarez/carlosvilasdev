@@ -1,15 +1,16 @@
 ---
 export interface Props {
+  url: string;
   title: string;
   date: string;
   excerpt: string;
 }
 
-const { title, date, excerpt } = Astro.props;
+const { url, title, date, excerpt } = Astro.props;
 ---
 
 <a
-  href="#"
+  href={url}
   class="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-sm hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
 >
   <h5
