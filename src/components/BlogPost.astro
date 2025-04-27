@@ -1,0 +1,22 @@
+---
+export interface Props {
+  title: string;
+  date: string;
+  excerpt: string;
+}
+
+const { title, date, excerpt } = Astro.props;
+---
+
+<a
+  href="#"
+  class="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-sm hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
+>
+  <h5
+    class="mb-2 text-xl font-semibold group-hover:text-primary transition-colors"
+  >
+    {title}
+  </h5>
+  <p class="text-sm text-muted-foreground">{date}</p>
+  <p class="font-normal text-gray-700">{excerpt}</p>
+</a>
