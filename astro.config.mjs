@@ -3,7 +3,6 @@ import { defineConfig } from 'astro/config';
 import tailwindcss from "@tailwindcss/vite";
 import sitemap from '@astrojs/sitemap';
 import node from '@astrojs/node';
-import { paraglideVitePlugin } from "@inlang/paraglide-js";
 
 // https://astro.build/config
 export default defineConfig({
@@ -16,11 +15,6 @@ export default defineConfig({
     vite: {
         plugins: [
             tailwindcss(),
-            paraglideVitePlugin({
-                project: "./project.inlang",
-                outdir: "./src/paraglide",
-                strategy: ["preferredLanguage", "baseLocale"]
-            })
         ]
     },
     output: "server",

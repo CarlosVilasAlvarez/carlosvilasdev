@@ -2,13 +2,15 @@
 import profilePic from "../assets/profile_pic.webp";
 import Separator from "../components/Separator.astro";
 import Base from "../layouts/Base.astro";
-import { m } from "../paraglide/messages.js";
 import SocialLinks from "../components/SocialLinks.astro";
 import BlogPost from "../components/BlogPost.astro";
 import Button from "../components/Button.astro";
 import { getCollection } from "astro:content";
 
-const blogPosts = await getCollection("blog");
+const featuredBlogPosts = await getCollection(
+  "blog",
+  (entry) => entry.data.featured
+);
 ---
 
 <Base>
@@ -37,7 +39,7 @@ const blogPosts = await getCollection("blog");
           Carlos Vilas Alvarez
         </h1>
         <p
-          class="text-lg text-muted-foreground text-gray-700 leading-relaxed max-w-md mx-auto md:mx-0"
+          class="text-lg text-muted-foreground text-slate-500 leading-relaxed max-w-md mx-auto md:mx-0"
         >
           Software Engineer & Technical Writer crafting elegant solutions for
           complex problems
@@ -45,18 +47,32 @@ const blogPosts = await getCollection("blog");
       </div>
       <div class="flex gap-3 justify-center md:justify-start">
         <a href="/about">
-          <Button>About me</Button>
+          <Button
+            size="small"
+            class="mt-2 hover:shadow-sm transition-shadow flex items-center"
+          >
+            About me
+          </Button>
         </a>
-        <a href="/blog"> <Button>Blog</Button></a>
+        <a href="/blog">
+          <Button
+            size="small"
+            class="mt-2 hover:shadow-sm transition-shadow flex items-center"
+          >
+            Blog
+          </Button>
+        </a>
       </div>
     </div>
   </section>
   <Separator />
   <section class="mb-16">
-    <h2 class="text-2xl font-bold mb-6 tracking-tight">Latest Articles</h2>
+    <h2 class="text-2xl font-semibold mb-6 tracking-tight">
+      Featured Articles
+    </h2>
     <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
       {
-        blogPosts.map((post) => (
+        featuredBlogPosts.map((post) => (
           <BlogPost
             url={`/blog/${post.data.slug}`}
             title={post.data.title}
@@ -67,108 +83,4 @@ const blogPosts = await getCollection("blog");
       }
     </div>
   </section>
-  <!-- <section class="bg-card rounded-xl p-6 border shadow-sm">
-      <h2 class="text-2xl font-bold mb-4 tracking-tight">
-        Subscribe to My Newsletter
-      </h2>
-      <NewsletterForm />
-    </section> -->
-  <!-- <section
-    id="hero"
-    class="px-4 py-8 flex justify-center items-center md:max-w-4xl md:mx-auto"
-  >
-
-    <div class="md:text-left ml-4 md:ml-12">
-      <h1 class="text-xl md:text-2xl font-bold">Carlos Vilas Álvarez</h1>
-      <p class="text-neutral-600 md:mt-2 text-base md:text-lg">
-        Software Developer
-      </p>
-      <div class="flex justify-start mt-3">
-        <CompanyIcon class="w-4 md:w-6 mr-1 text-neutral-600" />
-        <p class="text-neutral-600 mr-2 md:mr-4 text-sm md:text-base">
-          Qualifyze
-        </p>
-        <LocationIcon class="w-4 md:w-6 mr-1 text-neutral-600" />
-        <p class="text-neutral-600 text-sm md:text-base">
-          {m["profile.location"]}
-        </p>
-      </div>
-    </div>
-  </section> -->
-
-  <!--   <section id="timeline" class="px-4 py-8">
-    <div class="md:mx-auto md:max-w-4xl">
-      <h2 class="text-xl font-bold mb-6">{m["experience.title"]}</h2>
-      <div
-        class="space-y-8 relative border-s border-gray-200 dark:border-gray-700 ml-3"
-      >
-        <CompanyExperience
-          companyName="Qualifyze"
-          companyLogoURL="https://media.licdn.com/dms/image/v2/C4D0BAQGqyYkaHZRx0g/company-logo_200_200/company-logo_200_200/0/1660896511174/qualifyze_logo?e=1746662400&v=beta&t=q5ZQCA1ngS3CwDWDU2YcQLlo8qrMWXFiv6fnOGwHy4o"
-          timeline={m["experience.qualifyze.timeline"]()}
-          description={m["experience.qualifyze.description"]()}
-          technologies={[
-            "Node",
-            "TypeScript",
-            "Nest",
-            "PostgreSQL",
-            "Kubernetes",
-            "Next",
-            "AWS",
-            "DDD",
-          ]}
-        />
-        <CompanyExperience
-          companyName="SEAT:CODE"
-          companyLogoURL="https://media.licdn.com/dms/image/v2/D4D0BAQFEurf1aYROog/company-logo_200_200/company-logo_200_200/0/1701727106034/seatcode_logo?e=1746662400&v=beta&t=4C46VKUqsL6kcPueWMDXvh1Kewa2KaZxQLKNZCkGTAQ"
-          timeline={m["experience.seatCode.timeline"]()}
-          description={m["experience.seatCode.description"]()}
-          technologies={[
-            "Node",
-            "TypeScript",
-            "PostgreSQL",
-            "Kubernetes",
-            "Next",
-            "AWS",
-            "DDD",
-          ]}
-        />
-        <CompanyExperience
-          companyName="Unibo Neobank"
-          companyLogoURL="https://media.licdn.com/dms/image/v2/C4D0BAQGd04v44TkP4w/company-logo_200_200/company-logo_200_200/0/1678372601967/holaunibo_logo?e=1746662400&v=beta&t=czKt3dHWZ5f_WNNf2-K_uwyJRX98rWGKj5OnlxhZfiY"
-          timeline={m["experience.uniboNeobank.timeline"]()}
-          description={m["experience.uniboNeobank.description"]()}
-          technologies={[
-            "Node",
-            "TypeScript",
-            "PostgreSQL",
-            "Kubernetes",
-            "GCP",
-            "DDD",
-          ]}
-        />
-        <CompanyExperience
-          companyName="BizAway"
-          companyLogoURL="https://media.licdn.com/dms/image/v2/D4D0BAQEubesLpH024Q/company-logo_200_200/company-logo_200_200/0/1715701561956/bizaway_logo?e=1746662400&v=beta&t=BYQLj3OPZadcwrZXmx3yE4eM4utH0WyiyiCAi44a3tg"
-          timeline={m["experience.bizAway.timeline"]()}
-          description={m["experience.bizAway.description"]()}
-          technologies={[
-            "Node",
-            "TypeScript",
-            "MongoDB",
-            "Kubernetes",
-            "AWS",
-            "GraphQL",
-          ]}
-        />
-        <CompanyExperience
-          companyName="Galvintec"
-          companyLogoURL="https://media.licdn.com/dms/image/v2/C4E0BAQGoYg4el-OsUQ/company-logo_200_200/company-logo_200_200/0/1646400812986/galvintec_logo?e=1746662400&v=beta&t=jRUK-3b8-ERgvW9MiXDdjvT_YAoeUT387-8ksZ-K4XQ"
-          timeline={m["experience.galvintec.timeline"]()}
-          description={m["experience.galvintec.description"]()}
-          technologies={["Node", "TypeScript", "MongoDB", "Docker", "GraphQL"]}
-        />
-      </div>
-    </div>
-  </section> -->
 </Base>

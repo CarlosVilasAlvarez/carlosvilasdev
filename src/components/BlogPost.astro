@@ -1,23 +1,24 @@
 ---
-export interface Props {
+import type { HTMLAttributes } from "astro/types";
+
+export interface Props extends HTMLAttributes<"a"> {
   url: string;
   title: string;
   date: string;
   excerpt: string;
 }
 
-const { url, title, date, excerpt } = Astro.props;
+const { url, title, date, excerpt, ...attrs } = Astro.props;
 ---
 
 <a
   href={url}
-  class="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-sm hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
+  class="block max-w-sm md:max-w-full p-6 bg-slate-50 border border-gray-200 rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 h-full group"
+  {...attrs}
 >
-  <h5
-    class="mb-2 text-xl font-semibold group-hover:text-primary transition-colors"
-  >
+  <h5 class="mb-2 text-xl font-semibold group-hover:text-sky-600">
     {title}
   </h5>
-  <p class="text-sm text-muted-foreground">{date}</p>
-  <p class="font-normal text-gray-700">{excerpt}</p>
+  <p class="text-sm text-zinc-500 mb-6">{date}</p>
+  <p class="text-zinc-500">{excerpt}</p>
 </a>

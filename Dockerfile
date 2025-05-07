@@ -9,7 +9,7 @@ RUN npm ci
 # Copy the rest of the project files
 COPY . .
 
-# Build the project. This compiles inlang messages and builds the Astro standalone server.
+# Build the project. This builds the Astro standalone server.
 RUN npm run build
 
 # Stage 2: Run the standalone server

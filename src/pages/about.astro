@@ -1,0 +1,53 @@
+---
+import Base from "../layouts/Base.astro";
+import { House } from "@lucide/astro";
+import aboutImage from "../assets/about_img.webp";
+---
+
+<Base>
+  <div class="container mx-auto px-6 py-12 max-w-4xl flex-grow">
+    <div class="flex items-center justify-between mb-12">
+      <h1 class="text-3xl font-bold tracking-tight">About Me</h1>
+      <a href="/">
+        <div
+          class="flex align-middle p-3 rounded-xl border border-gray-200 cursor-pointer group bg-white hover:bg-gray-50 hover:shadow-sm"
+        >
+          <House size={16} class="group-hover:text-sky-600" />
+        </div>
+      </a>
+    </div>
+    <div class="mb-12 grid md:grid-cols-2 gap-8 items-start">
+      <div class="order-2 md:order-1 space-y-6">
+        <p class="text-base leading-relaxed text-muted-foreground">
+          I'm a software engineer passionate about creating meaningful digital
+          experiences. With expertise in web development and a keen eye for
+          design, I focus on building scalable and user-friendly applications.
+        </p>
+        <p class="text-base leading-relaxed text-muted-foreground">
+          When I'm not coding, you can find me writing technical articles,
+          contributing to open-source projects, and staying up-to-date with the
+          latest technology trends.
+        </p>
+        <!-- <Button
+          size="small"
+          class="mt-2 hover:shadow-sm transition-shadow flex items-center"
+        >
+          <FileDown class="mr-2 h-4 w-4" />
+          Download CV
+        </Button> -->
+      </div>
+      <div class="order-1 md:order-2">
+        <div
+          class="rounded-xl overflow-hidden shadow-md hover:shadow-lg transform hover:scale-[1.01] transition duration-300 ease-out"
+        >
+          <img
+            src={aboutImage.src}
+            alt="Photo of Carlos Vilas Alvarez"
+            class="object-cover w-full aspect-[3/4]"
+            loading="eager"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</Base>

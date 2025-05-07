@@ -3,6 +3,8 @@ title: "Modern Web Development"
 slug: "modern-web-development"
 excerpt: "Best practices for building modern web applications with React and TypeScript."
 date: "April 10, 2025"
+category: "Software"
+featured: true
 ---
 
 # 🚀 A Deep Dive into Modern Web Development (An MD Showcase)

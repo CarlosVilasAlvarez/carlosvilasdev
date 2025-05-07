@@ -1,0 +1,91 @@
+---
+import { getCollection } from "astro:content";
+import Button from "../../components/Button.astro";
+import Base from "../../layouts/Base.astro";
+import { House } from "@lucide/astro";
+import BlogPost from "../../components/BlogPost.astro";
+
+const DEFAULT_CATEGORY = "All categories";
+const blogPosts = await getCollection("blog");
+const categories = [
+  DEFAULT_CATEGORY,
+  ...new Set(blogPosts.map((blogPost) => blogPost.data.category)),
+];
+---
+
+<Base>
+  <div class="flex justify-between mb-16">
+    <h1 class="font-bold text-3xl">Blog</h1>
+    <a href="/">
+      <div
+        class="flex align-middle p-3 rounded-xl border border-gray-200 cursor-pointer group bg-white hover:bg-gray-50 hover:shadow-sm"
+      >
+        <House size={16} class="group-hover:text-sky-600" />
+      </div>
+    </a>
+  </div>
+  <div class="flex justify-start gap-3 mb-8">
+    {
+      categories.map((category) => (
+        <Button
+          data-category={category}
+          size="small"
+          class={
+            category === DEFAULT_CATEGORY
+              ? "bg-gray-100 ring-2 ring-gray-100 text-sky-600"
+              : ""
+          }
+        >
+          {category}
+        </Button>
+      ))
+    }
+  </div>
+  <div class="grid gap-6 md:grid-cols-2">
+    {
+      blogPosts.map((post) => (
+        <BlogPost
+          url={`/blog/${post.data.slug}`}
+          title={post.data.title}
+          excerpt={post.data.excerpt}
+          date={post.data.date.toDateString()}
+          data-category={post.data.category}
+        />
+      ))
+    }
+  </div>
+</Base>
+
+<script>
+  const DEFAULT_CATEGORY = "All categories";
+  let selectedCategory = DEFAULT_CATEGORY;
+  const buttons = document.querySelectorAll("button");
+  let selectedButton = document.querySelector("button.bg-gray-100");
+  const posts = document.querySelectorAll("a.block");
+
+  function filterPostsVisibility(categoryToShow: string) {
+    posts?.forEach((post) => {
+      const postCategory = post.getAttribute("data-category");
+      const shouldShow =
+        categoryToShow === DEFAULT_CATEGORY || postCategory === categoryToShow;
+      post.classList.toggle("hidden", !shouldShow);
+    });
+  }
+
+  buttons.forEach((button) => {
+    button.addEventListener("click", (event: MouseEvent) => {
+      const target = event.target as HTMLElement;
+      selectedButton?.classList.remove("bg-gray-100");
+      selectedButton?.classList.remove("ring-2");
+      selectedButton?.classList.remove("ring-gray-100");
+      selectedButton?.classList.remove("text-sky-600");
+      target.classList.add("bg-gray-100");
+      target.classList.add("ring-2");
+      target.classList.add("ring-gray-100");
+      target.classList.add("text-sky-600");
+      selectedButton = target;
+      selectedCategory = target.getAttribute("data-category")!;
+      filterPostsVisibility(selectedCategory);
+    });
+  });
+</script>

@@ -20,21 +20,23 @@ const { Content } = await render(post);
 ---
 
 <Base>
-  <main>
-    <div class="mb-6 flex justify-between">
+  <div class="max-w-2xl">
+    <div class="flex justify-between mb-12">
       <a href="/blog">
-        <Button
-          ><div class="flex gap-x-3">
+        <Button size="small">
+          <div class="flex gap-x-3">
             <ArrowLeft /> Back to blog
           </div>
         </Button>
       </a>
       <a href="/">
-        <Button>
-          <House />
-        </Button>
+        <div
+          class="flex align-middle p-3 rounded-xl border border-gray-200 cursor-pointer group bg-white hover:bg-gray-50 hover:shadow-sm"
+        >
+          <House size={16} class="group-hover:text-sky-600" />
+        </div>
       </a>
     </div>
     <Prose><Content /></Prose>
-  </main></Base
->
+  </div>
+</Base>
