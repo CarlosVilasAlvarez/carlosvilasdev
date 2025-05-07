@@ -8,9 +8,6 @@ import node from '@astrojs/node';
 export default defineConfig({
     site: 'https://carlosvilas.dev',
     integrations: [sitemap()],
-    experimental: {
-        svg: true,
-    },
     server: { port: 3000, host: true },
     vite: {
         plugins: [
